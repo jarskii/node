@@ -2,9 +2,18 @@
 <html>
     <meta charset="utf8">
 <head>
-
+    <script type="text/javascript" src="js/socket.io.js"></script>
+    <script type="text/javascript">
+        var socket = io.connect('http://localhost');
+        socket.on('news', function (data) {
+            console.log(data);
+            socket.emit('my other event', { my: 'data' });
+        });
+    </script>
 </head>
 <body>
-    <div class="b-wrapper"></div>
+    <div class="b-wrapper">
+        Hello hello!
+    </div>
 </body>
 </html>
