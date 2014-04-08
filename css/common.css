@@ -1,0 +1,25 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.b-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #a0dcff;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-family: Verdana;
+}
+
+.b-wrapper-caption {
+    font-size: 2em;
+    position: relative;
+    top: 50%;
+    line-height: 2em;
+    margin-top: -1em;
+}
