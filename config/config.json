@@ -1,0 +1,11 @@
+{
+    "session": {
+        "key": "epic-sid",
+        "secret": "VasVas",
+        "cookie": {
+            "path": "/",
+            "httpOnly": true,
+            "maxAge": null
+        }
+    }
+}

@@ -1,22 +1,46 @@
 var express = require("express"),
     logfmt = require("logfmt"),
+    config = require("./config/config"),
     fs = require('fs'),
-    app = express();
+    app = express(),
+    db = require('./db-handler'),
+    auth = require('./modules/auth.js'),
+    mongoStore = require('connect-mongodb');
 
+app.use(express.bodyParser());
+app.use(express.cookieParser());
 
 app.use(logfmt.requestLogger());
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/public/'));
 
-app.get('/', function(req, res) {
-    fs.readFile('index.html', 'utf8', function(err, data) {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data);
-        res.end();
-    });
-});
+app.use(express.session({
+    secret: "VasVas",
+    key: config.session.key,
+    cookie: config.session.cookie
+//    store: new mongoStore({mongoose_connection: db.connection})
+}))
 
-//app.engine('html', require('ejs').renderFile('index.html'));
+app.use(app.router);
+
+//app.use("/ses", function(err, req, res, next) {
+//    console.log(req.session);
+////    req.session.val = req.session.val+1 || 1;
+////
+////    res.send(req.session.val);
+//})
+
+
+app.get("/sys", function(req, res) {
+    req.session.val = req.session.val + 1 || 1;
+    console.log(req.session.se);
+    res.send("vist: " + req.session.val);
+})
+
+
+
+//Модуль авторизации
+auth.run(app, db);
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {

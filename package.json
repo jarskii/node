@@ -24,5 +24,7 @@
     "logfmt": "^1.1.2",
     "express": "^3.5.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-reload": "^0.2.0"
+  }
 }
