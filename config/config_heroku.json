@@ -8,5 +8,5 @@
             "maxAge": null
         }
     },
-    "db": "mongodb://localhost/"
+    "db": "mongodb://zharsky:4institutjarskii5@ds031857.mongolab.com:31857/heroku_app23867497"
 }

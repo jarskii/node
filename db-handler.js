@@ -1,6 +1,7 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    config = require('./config/config_heroku');
 
-mongoose.connect('mongodb://localhost/');
+mongoose.connect(config.db);
 
 var db = mongoose.connection;
 
