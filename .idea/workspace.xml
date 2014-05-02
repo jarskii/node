@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0e29b30-8816-440f-8750-17123afa108d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/auth.js" afterPath="$PROJECT_DIR$/modules/auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-handler.js" afterPath="$PROJECT_DIR$/db-handler.js" />
     </list>
     <ignored path="NodeRUSH.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,7 +89,7 @@
       <file leaf-file-name="db-handler.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+            <state line="18" column="43" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,12 +150,12 @@
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/config/config_heroku.json" />
         <option value="$PROJECT_DIR$/config/config.json" />
-        <option value="$PROJECT_DIR$/db-handler.js" />
         <option value="$PROJECT_DIR$/web.js" />
         <option value="$PROJECT_DIR$/demo/lazyload/index.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/modules/auth.js" />
+        <option value="$PROJECT_DIR$/db-handler.js" />
       </list>
     </option>
   </component>
@@ -468,13 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/lazyload/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="33" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.7878788">
@@ -513,6 +503,13 @@
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="27" selection-start="629" selection-end="635" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="43" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
