@@ -19,7 +19,7 @@ define(
                 data: {
                     "login": container.children('#regLogin').val(),
                     "pass": container.children('#regConfirmPass').val(),
-                    "email": container.children('#regEmail').val()
+                    "invait": container.children('#regEmail').val()
                 },
                 success: function(data) {
                     console.log(data);

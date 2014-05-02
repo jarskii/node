@@ -5,8 +5,7 @@ module.exports.run = function(app, db) {
     app.post('/register', function(req, res) {
         var User = new db.UserModel({
             login: req.body.login,
-            pass: req.body.pass,
-            email: req.body.email
+            pass: req.body.pass
         });
 
         db.UserModel.validateUser(req.body.login, function(err, user) {
@@ -14,15 +13,21 @@ module.exports.run = function(app, db) {
                 console.log(err)
             } else {
                 if(user[0] === undefined) {
-                    User.save(function(err) {
-                        if (!err) {
-                            res.send({
-                                status: "OK"
-                            })
-                        } else {
-                            console.log(err);
-                        }
-                    })
+                    if (req.body.invait != 'ohoho') {
+                        res.statusCode = 500;
+                        res.send({error: 'not avalable invite'});
+                    } else {
+                        User.save(function(err) {
+                            if (!err) {
+                                res.send({
+                                    status: "OK"
+                                })
+                            } else {
+                                console.log(err);
+                            }
+                        })
+                    }
+
                 } else {
                     res.statusCode = 500;
                     res.send({error: 'already exist'});
