@@ -1,0 +1,49 @@
+<!doctype html5>
+    <head>
+        <style type="text/css">
+            body, html {
+                padding: 0;
+                margin: 0;
+            }
+
+            .b-item {
+                display: inline-block;
+                width: 400px;
+                height: 600px;
+                margin: 10px 0 0 10px;
+            }
+
+            .lazy {
+                opacity: 0;
+
+                -webkit-transition: opacity .5s ease;
+                -moz-transition: opacity .5s ease;
+                -o-transition: opacity .5s ease;
+                transition: opacity .5s ease;
+            }
+
+            .lazy-show {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="b-wrapper">
+        <div data-src="/lazyload/img/1.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/2.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/3.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/4.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/5.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/6.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/7.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/8.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/9.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/10.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/11.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/12.jpg" class="b-item lazy"></div>
+        <div data-src="/lazyload/img/1.jpg" class="b-item lazy"></div>
+        <img data-src="/lazyload/img/2.jpg" class="lazy" />
+        <img data-src="/lazyload/img/3.jpg" class="lazy"/>
+    </div>
+    <script type="text/javascript" src="/lazyload/lazystyle.js"></script>
+    </body>

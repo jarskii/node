@@ -37,7 +37,13 @@ app.get("/sys", function(req, res) {
     res.send("vist: " + req.session.val);
 })
 
+app.get("/demo/lazyload", function(req, res) {
+    app.use(express.static(__dirname + '/demo/'));
 
+    fs.readFile('./demo/lazyload/index.html', function(err, data) {
+        res.write(data);
+    })
+})
 
 //Модуль авторизации
 auth.run(app, db);
