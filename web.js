@@ -42,6 +42,16 @@ app.get("/demo/lazyload", function(req, res) {
 
     fs.readFile('./demo/lazyload/index.html', function(err, data) {
         res.write(data);
+        res.end();
+    })
+})
+
+app.get("/demo/unusedstyles", function(req, res) {
+    app.use(express.static(__dirname + '/demo/'));
+
+    fs.readFile('./demo/unusedStyles/index.html', function(err, data) {
+        res.write(data);
+        res.end();
     })
 })
 
