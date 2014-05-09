@@ -42,13 +42,14 @@ module.exports.run = function(app, db) {
             if (err) {
                 console.log(err)
             } else {
+                res.statusCode = 200
                 if (user === undefined) {
-                    res.send({status: 'OK'}, {success: false});
+                    res.send({success: false});
                 } else {
                     if (user[0].pass == req.body.pass) {
-                        res.send({status: 'OK'}, {success: true});
+                        res.send({success: true});
                     } else {
-                        res.send({status: 'OK'}, {success: false});
+                        res.send({success: false});
                     }
                 }
             }
