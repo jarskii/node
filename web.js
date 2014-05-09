@@ -1,6 +1,6 @@
 var express = require("express"),
     logfmt = require("logfmt"),
-    config = require("./config/config"),
+    config = require("./config/config_heroku"),
     fs = require('fs'),
     app = express(),
     db = require('./db-handler'),
@@ -33,7 +33,7 @@ app.use(app.router);
 
 app.get("/sys", function(req, res) {
     req.session.val = req.session.val + 1 || 1;
-    console.log(req.session.se);
+//    console.log(req.session.se);
     res.send("vist: " + req.session.val);
 })
 

@@ -9,11 +9,10 @@
     font-style: normal;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body {
     font-family: FuturaNewLight;
+    padding: 0;
+    margin: 0;
 }
 
 .b-wrapper {
@@ -30,7 +29,6 @@ body, html {
 .b-wrapper-caption {
     font-size: 2em;
     position: relative;
-    top: 30%;
     line-height: 1.5em;
 }
 

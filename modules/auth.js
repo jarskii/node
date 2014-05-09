@@ -1,6 +1,6 @@
 module.exports.run = function(app, db) {
 
-    var config = require('./../config/config');
+    var config = require('./../config/config_heroku');
 
     app.post('/register', function(req, res) {
         var User = new db.UserModel({

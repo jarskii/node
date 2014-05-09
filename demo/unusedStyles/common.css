@@ -10,7 +10,10 @@
 }
 
 body, html {
+    margin: 0;
+    padding: 0;
     height: 100%;
+    font-family: FuturaNewLight;
 }
 
 .b-wrapper {
@@ -44,4 +47,16 @@ body, html {
 .b-dummy-style {
     color: #322;
     font-family: Arial;
+}
+
+#hiddenTitle {
+    display: none;
+}
+
+#hiddenTitle div{
+    display: none;
+}
+
+.b-wrapper-caption .b-registration {
+    display: none;
 }
