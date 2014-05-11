@@ -1,6 +1,6 @@
 module.exports.run = function(app, db) {
 
-    var config = require('./../config/config');
+    var config = require('./../config/config_heroku');
     var crypto = require('crypto');
 
     app.post('/register', function(req, res) {

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    config = require('./config/config');
+    config = require('./config/config_heroku');
 
 mongoose.connect(config.db);
 
