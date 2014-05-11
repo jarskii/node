@@ -1,0 +1,9 @@
+<div class="m-user">
+    <h1 class="m-user-title"><%= login %></h1>
+    <ul class="m-user-resources">
+        <% _.each(resources, function(item) { %>
+        <li class="m-user-resources-item"><%= item.caption %></li>
+        <% }) %>
+    </ul>
+    <input type="text" id="addResources"/>
+</div>

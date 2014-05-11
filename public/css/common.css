@@ -69,7 +69,6 @@ button {
 }
 
 .b-registration {
-    display: none;
     width: 30%;
     position: absolute;
     top: 10%;
@@ -105,4 +104,24 @@ button {
 .b-registration button {
     position: relative;
     z-index: 5;
+}
+
+
+/* message handler element  */
+.error-msg {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+.b-user {
+    padding: 20px;
+}
+
+.b-user-title {
+    text-align: left;
 }

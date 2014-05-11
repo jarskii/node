@@ -104,7 +104,7 @@
                     for (var j=1; j<list.length+1; j++) {
                         if (!/,/.test(list[list.length-1])) {
 //                            console.log(list[list.length-1])
-                            console.log(node.parentNode.);
+                            console.log(node.parentNode);
                         }
                     }
 

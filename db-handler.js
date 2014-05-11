@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    config = require('./config/config_heroku');
+    config = require('./config/config');
 
 mongoose.connect(config.db);
 
@@ -17,7 +17,9 @@ var Schema = mongoose.Schema;
 var User = new Schema({
     login: { type: String, required: true },
     pass: { type: String, required: true },
-    modified: { type: Date, default: Date.now }
+    session: { type: String, required: true },
+    modified: { type: Date, default: Date.now },
+    data: Schema.Types.Mixed
 })
 
 var Session = new Schema({

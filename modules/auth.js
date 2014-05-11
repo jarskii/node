@@ -1,11 +1,14 @@
 module.exports.run = function(app, db) {
 
-    var config = require('./../config/config_heroku');
+    var config = require('./../config/config');
+    var crypto = require('crypto');
 
     app.post('/register', function(req, res) {
+        console.log(crypto.createHash('md5').update(req.body.login).digest('hex'));
         var User = new db.UserModel({
             login: req.body.login,
-            pass: req.body.pass
+            pass: req.body.pass,
+            session: crypto.createHash('md5').update(req.body.login).digest('hex')
         });
 
         db.UserModel.validateUser(req.body.login, function(err, user) {
@@ -36,18 +39,18 @@ module.exports.run = function(app, db) {
         })
     });
 
+
     app.post('/auth', function(req, res) {
-        console.log(req.body);
         return db.UserModel.validateUser(req.body.login, function(err, user){
             if (err) {
                 console.log(err)
             } else {
-                res.statusCode = 200
-                if (user === undefined) {
+                if (!user.length) {
                     res.send({success: false});
                 } else {
                     if (user[0].pass == req.body.pass) {
-                        res.send({success: true});
+                        req.session.login = req.body.login;
+                        res.send({success: true, user: req.session.login});
                     } else {
                         res.send({success: false});
                     }

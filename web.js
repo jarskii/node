@@ -7,35 +7,22 @@ var express = require("express"),
     auth = require('./modules/auth.js'),
     mongoStore = require('connect-mongodb');
 
+
+app.set('views', __dirname + '/public/views');
 app.use(express.bodyParser());
 app.use(express.cookieParser());
-
-app.use(logfmt.requestLogger());
-
-app.use(express.static(__dirname + '/public/'));
 
 app.use(express.session({
     secret: "VasVas",
     key: config.session.key,
     cookie: config.session.cookie
-//    store: new mongoStore({mongoose_connection: db.connection})
-}))
+}));
+
+app.use(logfmt.requestLogger());
+
+app.use(express.static(__dirname + '/public/'));
 
 app.use(app.router);
-
-//app.use("/ses", function(err, req, res, next) {
-//    console.log(req.session);
-////    req.session.val = req.session.val+1 || 1;
-////
-////    res.send(req.session.val);
-//})
-
-
-app.get("/sys", function(req, res) {
-    req.session.val = req.session.val + 1 || 1;
-//    console.log(req.session.se);
-    res.send("vist: " + req.session.val);
-})
 
 app.get("/demo/lazyload", function(req, res) {
     app.use(express.static(__dirname + '/demo/'));
@@ -47,12 +34,36 @@ app.get("/demo/lazyload", function(req, res) {
 })
 
 app.get("/demo/unusedstyles", function(req, res) {
+    if (!req.session.login) {
+        res.redirect('/')
+    } else {
+        app.use(express.static(__dirname + '/demo/'));
+
+        fs.readFile('./demo/unusedStyles/index.html', function(err, data) {
+            res.write(data);
+            res.end();
+        })
+    }
+})
+
+app.get("/demo/megalist", function(req, res) {
     app.use(express.static(__dirname + '/demo/'));
 
-    fs.readFile('./demo/unusedStyles/index.html', function(err, data) {
+    fs.readFile('./demo/megalist/index.html', function(err, data) {
         res.write(data);
         res.end();
     })
+})
+
+app.get('/:login', function(req, res) {
+    if (req.session.login) {
+        res.render("user.jade", {
+            login: req.session.login
+        });
+    } else {
+        res.redirect('/');
+    }
+
 })
 
 //Модуль авторизации
